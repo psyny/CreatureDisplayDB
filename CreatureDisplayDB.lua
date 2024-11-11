@@ -13,7 +13,7 @@ local function GetLatestOrRandom(displayData, key, latest)
     end
 
     if latest then
-        return displayData[key][0]
+        return displayData[key][1]
     else
         return displayData[key][math.random(#displayData[key])]
     end
@@ -150,37 +150,4 @@ function CreatureDisplayDB:GetFixedNpcIdForCurrentZone(npcName)
     local currZoneId = C_Map.GetBestMapForUnit("player")
 
     return self:GetFixedNpcIdForZone(currZoneName, currZoneId, npcName)
-end
-
--- ---------------------------------------------------------
--- Support Commands
--- ---------------------------------------------------------
-
-
--- Target NPC Display Info
-SLASH_CreatureDisplayDBTargetInfo1 = "/CreatureDisplayDBTargetInfo"
-SlashCmdList["CreatureDisplayDBTargetInfo"] = function()   
-    local unittoken = "target"
-    local creatureName = ""
-    local creatureServer = ""
-    local guid = ""
-    local creatureId = ""
-    local zoneName = GetZoneText()
-    local zoneID = C_Map.GetBestMapForUnit("player") 
-
-    if UnitExists(unittoken) then
-        creatureName, creatureServer = UnitName(unittoken)
-        guid = UnitGUID(unittoken)
-        if guid ~= "" then
-            creatureId = tonumber(guid:match("[Creature|Vehicle|Pet|Vignette|Instance]%-.-%-.-%-.-%-.-%-(%d+)"))
-        end
-    end
-
-    print("[TARGET INFO]")
-    print("Name: " .. (creatureName or ""))
-    print("Server: " .. (creatureServer or ""))
-    print("ID: " .. (creatureId or ""))
-    print("GUID: " .. (guid or ""))
-    print("Zone Name: " .. (zoneName or ""))
-    print("Zone ID: " .. (zoneID or ""))
 end

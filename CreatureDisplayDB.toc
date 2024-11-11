@@ -13,3 +13,4 @@
 CreatureDisplayDB.lua
 CreatureDisplayDBdb.lua
 CreatureDisplayDBzoneFixed.lua
+CreatureDisplayDBcmd.lua
