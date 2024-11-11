@@ -1,0 +1,15 @@
+## Interface: 110002 
+## Title: CreatureDisplayDB
+## Notes: Provides display data for creatures by NPC ID or NPC Name
+## Author: Psyny
+## Version: 1.0
+## DefaultState: enabled
+
+## SavedVariables: CreatureDisplayDBDB
+
+## LoadManagers: AddonLoader
+## X-LoadOn-Always: delayed
+
+CreatureDisplayDB.lua
+CreatureDisplayDBdb.lua
+CreatureDisplayDBzoneFixed.lua
