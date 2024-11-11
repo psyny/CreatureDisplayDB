@@ -7,6 +7,52 @@ This addon has a database of NPC Ids and Display Ids, it does not get it from in
 
 For now, the database used is WAGO only. But I might add more in the future.
 
+## Creature Display Data
+
+The creature display data is an object with 3 fields:
+
+- `name`: the name of the creature
+- `npc_ids`: a list of NPC Ids for that creature, ordered desc. (in theory, the first is the newest)
+- `display_ids`: a list of Display Ids for that creature, ordered desc. (in theory, the first is the newest)
+
+## How to use this addon
+
+In your addon script, you can call this addon by a code like:
+
+```
+local getCreatureNpcID(name)
+
+  if CreatureDisplayDB then
+
+    # First, lets check if the creature has a fixed NPC Id for the current zone
+    # This part can be skipped if your usecase dont care for npc ids locked by zone
+
+    local creatureId = CreatureDisplayDB:GetFixedNpcIdForCurrentZone(npcName)
+    if creatureId then
+      return creatureId
+    end
+
+    # Lets look for other npc ids for this creature
+
+    local npcIds = CreatureDisplayDB:GetNpcIdsByName(name)
+    if npcIds then
+
+      # Lets return the latest npcid (first on the list)
+      return npcIds[0]
+
+    end    
+
+  end
+
+  # Creature not found in the database or addon not found
+
+  return nil
+
+end
+```
+
+See below the other functions this addon provides
+
 ## Main Functions
 
 ### 1. `CreatureDisplayDB:GetCreatureDisplayDataByName(name)`
