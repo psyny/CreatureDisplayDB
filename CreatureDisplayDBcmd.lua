@@ -35,6 +35,17 @@ local function DisplayModel(ids, isDisplayId)
                 print ("resultingDisplayId: " .. resultingDisplayId .. " for display id: " .. displayId) 
             end
 
+            local success = pcall(function() modelFrame:SetCustomCamera(1) end)  -- Attempt to modify the camera
+            if not success then
+                print("Camera adjust failed. Maybe the model is blank")
+            end     
+            
+            modelFrame:SetAnimation(0)
+            success = pcall(function() modelFrame:RefreshModel() end)
+            if not success then
+                print("Animation adjust failed. Maybe the model is blank")
+            end            
+
             local resultingFileId = modelFrame:GetModelFileID()
             if resultingFileId and resultingFileId > 0 then
                 print ("resultingFileId: " .. resultingFileId .. " for display id: " .. displayId) 
