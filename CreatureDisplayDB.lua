@@ -3,7 +3,7 @@
 CreatureDisplayDB = {}
 
 local function GetCreatureDisplayDataByIdx(idx)
-    local displayData = CreatureDisplayDBdb.data[idx]
+    local displayData = CreatureDisplayDBdb.data[idx].zone[0]
     return displayData
 end
 
@@ -34,7 +34,20 @@ end
 
 
 function CreatureDisplayDB:GetCreatureDisplayDataById(npcid)
-    local idx = CreatureDisplayDBdb.byid[npcid]
+    return self:GetCreatureDisplayDataByNpcId(npcid)
+end
+
+function CreatureDisplayDB:GetCreatureDisplayDataByNpcId(npcid)
+    local idx = CreatureDisplayDBdb.bynid[npcid]
+    if not idx then
+        return nil
+    end
+
+    return GetCreatureDisplayDataByIdx(idx)
+end
+
+function CreatureDisplayDB:GetCreatureDisplayDataByDisplayId(displayid)
+    local idx = CreatureDisplayDBdb.bydid[displayid]
     if not idx then
         return nil
     end
