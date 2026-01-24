@@ -24,6 +24,10 @@ end
 -- ---------------------------------------------------------
 
 function CreatureDisplayDB:GetCreatureDisplayDataByName(name)
+    if issecretvalue(name) then
+        return nil
+    end
+    
     local idx = CreatureDisplayDBdb.byname[name]
     if not idx then
         return nil
@@ -34,10 +38,18 @@ end
 
 
 function CreatureDisplayDB:GetCreatureDisplayDataById(npcid)
+    if issecretvalue(npcid) then
+        return nil
+    end
+    
     return self:GetCreatureDisplayDataByNpcId(npcid)
 end
 
 function CreatureDisplayDB:GetCreatureDisplayDataByNpcId(npcid)
+    if issecretvalue(npcid) then
+        return nil
+    end
+    
     local idx = CreatureDisplayDBdb.bynid[npcid]
     if not idx then
         return nil
@@ -47,6 +59,10 @@ function CreatureDisplayDB:GetCreatureDisplayDataByNpcId(npcid)
 end
 
 function CreatureDisplayDB:GetCreatureDisplayDataByDisplayId(displayid)
+    if issecretvalue(displayid) then
+        return nil
+    end
+    
     local idx = CreatureDisplayDBdb.bydid[displayid]
     if not idx then
         return nil
@@ -139,6 +155,10 @@ end
 -- ---------------------------------------------------------
 
 function CreatureDisplayDB:GetFixedNpcIdForZone(zoneName, zoneId, npcName)
+    if issecretvalue(npcName) then
+        return nil
+    end
+    
     local subZones = CreatureDisplayDBzoneFixed.byZoneName[zoneName]
     if not subZones then
         return nil
