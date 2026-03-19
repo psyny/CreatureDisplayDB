@@ -13,28 +13,32 @@ CreatureDisplayDBzoneFixed.byZoneName = {
             [ [=[Thrall]=] ] = 166981,
             [ [=[Lady Jaina Proudmoore]=] ] = 166980,
             [ [=[Baine Bloodhoof]=] ] = 168162,
-            [ [=[The Jailer]=] ] = 165539,   
+            [ [=[The Jailer]=] ] = 165539,
         },
         [1648] = {        
             [ [=[Anduin Wrynn]=] ] = 167833,      
         }
     },
-    [ [=[Isle of Quel'Danas]=] ] = {
+    [ [=[GROUP: TheWarWithin]=] ] = {
         [0] = {
             [ [=[Arator]=] ] = 250391,
+            [ [=[Lady Liadrin]=] ] = 236146,
+            [ [=[Orweyna]=] ] = 236903,
+            [ [=[Valeera Sanguinar]=] ] = 242381,
+            [ [=[Anduin Wrynn]=] ] = 249444,     
+            [ [=[Alleria Windrunner]=] ] = 239826,     
         },
     },      
-    [ [=[Eversong Woods]=] ] = {
+    [ [=[GROUP: Midnight]=] ] = {
         [0] = {
             [ [=[Arator]=] ] = 250391,
-            [ [=[Orweyna]=] ] = 236903,            
+            [ [=[Lady Liadrin]=] ] = 236146,
+            [ [=[Orweyna]=] ] = 236903,
+            [ [=[Valeera Sanguinar]=] ] = 242381,
+            [ [=[Anduin Wrynn]=] ] = 249444,     
+            [ [=[Alleria Windrunner]=] ] = 239826,     
         },
-    }, 
-    [ [=[Zul'Aman]=] ] = {
-        [0] = {
-            [ [=[Lady Liadrin]=] ] = 236146,          
-        },
-    },      
+    },  
 }
 
 

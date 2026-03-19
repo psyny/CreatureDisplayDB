@@ -2,7 +2,7 @@
 ## Title: CreatureDisplayDB
 ## Notes: Provides display data for creatures by NPC ID or NPC Name
 ## Author: Psyny
-## Version: 1.7
+## Version: 1.8
 ## DefaultState: enabled
 
 ## SavedVariables: CreatureDisplayDBDB
@@ -10,6 +10,7 @@
 ## LoadManagers: AddonLoader
 ## X-LoadOn-Always: delayed
 
+ZoneGrouping.lua
 CreatureDisplayDB.lua
 CreatureDisplayDBdb.lua
 CreatureDisplayDBzoneFixed.lua

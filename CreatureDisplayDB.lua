@@ -154,17 +154,11 @@ end
 -- FIXED ID BY ZONE retrieval
 -- ---------------------------------------------------------
 
-function CreatureDisplayDB:GetFixedNpcIdForZone(zoneName, zoneId, npcName)
-    if issecretvalue(npcName) then
-        return nil
-    end
-    
+local function LookupFixedNpcIdInZoneData(zoneName, zoneId, npcName)
     local subZones = CreatureDisplayDBzoneFixed.byZoneName[zoneName]
     if not subZones then
         return nil
     end
-
-    zoneId = zoneId or 0
 
     local zoneIdNpcData = subZones[zoneId]
     if not zoneIdNpcData then
@@ -174,7 +168,26 @@ function CreatureDisplayDB:GetFixedNpcIdForZone(zoneName, zoneId, npcName)
         return nil
     end    
 
-    local npcId = zoneIdNpcData[npcName]
+    return zoneIdNpcData[npcName]
+end
+
+function CreatureDisplayDB:GetFixedNpcIdForZone(zoneName, zoneId, npcName)
+    if issecretvalue(npcName) then
+        return nil
+    end
+    
+    zoneId = zoneId or 0
+
+    local npcId = LookupFixedNpcIdInZoneData(zoneName, zoneId, npcName)
+    if npcId then
+        return npcId
+    end
+
+    local groupName = ZoneGrouping:GetGroupNameForZone(zoneName)
+    if groupName then
+        npcId = LookupFixedNpcIdInZoneData(groupName, zoneId, npcName)
+    end
+
     return npcId
 end
 
@@ -184,3 +197,5 @@ function CreatureDisplayDB:GetFixedNpcIdForCurrentZone(npcName)
 
     return self:GetFixedNpcIdForZone(currZoneName, currZoneId, npcName)
 end
+
+ZoneGrouping:Initialize()
