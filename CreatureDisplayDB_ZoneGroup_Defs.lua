@@ -71,6 +71,11 @@ CreatureDisplayDB_ZoneGroup_Defs = {
     },
 
     ["Midnight"] = {
+        2537,           -- QuelThalas (Midnight)        
         2393,           -- Silvermoon City (Midnight)
+        2413,           -- Harandar
+        2437,           -- Zul'Aman (Midnight)
+        2405,           -- Voidstorm (Midnight)
+        2512,           -- CoiledIsles (Midnight)
     },
 }

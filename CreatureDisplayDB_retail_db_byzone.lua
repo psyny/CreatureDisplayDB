@@ -44,10 +44,11 @@ CreatureDisplayDBzoneFixed.byName = {
             [ [=[Midnight]=] ] = { 249444 },
         },
     },
-    [ [=[Arator]=] ] = {
-        byGroup = {
-            [ [=[TheWarWithin]=] ] = { 250391 },
-            [ [=[Midnight]=] ] = { 250391 },
+    [ [=[Arator]=] ] = {   
+        byId = {
+            [2274] = { 250391 },
+            [2537] = { 235523 },
+            [2393] = { 235523 },
         },
     },
     [ [=[Lady Liadrin]=] ] = {
