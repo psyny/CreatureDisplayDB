@@ -2,7 +2,7 @@
 ## Title: CreatureDisplayDB
 ## Notes: Provides display data for creatures by NPC ID or NPC Name
 ## Author: Psyny
-## Version: 2.0
+## Version: 2.1
 ## DefaultState: enabled
 
 ## SavedVariables: CreatureDisplayDBDB
